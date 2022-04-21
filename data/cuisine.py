@@ -20,3 +20,4 @@ class Recipe(SqlAlchemyBase, UserMixin, SerializerMixin):
     proteins = sqlalchemy.Column(sqlalchemy.Float, nullable=True)
     fats = sqlalchemy.Column(sqlalchemy.Float, nullable=True)
     carboh = sqlalchemy.Column(sqlalchemy.Float, nullable=True)
+    itogProducts = sqlalchemy.Column(sqlalchemy.String, nullable=True)
