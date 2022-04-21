@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, IntegerField, StringField, BooleanField
+from wtforms import SubmitField, IntegerField, StringField
 
 
 class SearchRecipeForm(FlaskForm):

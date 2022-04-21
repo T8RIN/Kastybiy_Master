@@ -1,13 +1,11 @@
-import os
 from flask import Flask, render_template, request, make_response
-from flask_wtf import form
+from flask_restful import Api
 from werkzeug.utils import redirect
 
 from data import db_session
 from data.cuisine import Recipe
 from data.products import Product
 from data.resource import cuisine_resource, products_resource
-from flask_restful import Api
 
 # Initialization
 db_session.global_init("db/kastybiy.db")
@@ -107,21 +105,21 @@ def cuisine():
 
 @app.route('/getfridge')
 def getFridgeCookie():
-   cookies = request.cookies.get("fridge")
-   if cookies is None:
-       products = {}
-       for i in range(1, 38):
-           products[i] = 0
-       cookies = f"{products}"
-   return cookies
+    cookies = request.cookies.get("fridge")
+    if cookies is None:
+        products = {}
+        for i in range(1, 38):
+            products[i] = 0
+        cookies = f"{products}"
+    return cookies
 
 
 @app.route('/getfavorite')
 def getFavoriteCookie():
-   cookies = request.cookies.get("favorite")
-   if cookies is None:
-       cookies = "[]"
-   return cookies
+    cookies = request.cookies.get("favorite")
+    if cookies is None:
+        cookies = "[]"
+    return cookies
 
 
 @app.route("/recipe/<int:id>", methods=["GET", "POST"])
@@ -158,7 +156,6 @@ def recipe(id):
 
 @app.route("/fridge", methods=["GET", "POST"])
 def fridge():
-
     productsDict = {}
     if request.method == "POST":
         res = make_response(redirect("/fridge"))
@@ -226,4 +223,3 @@ def favorite():
 
 if __name__ == "__main__":
     app.run()
-    # app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

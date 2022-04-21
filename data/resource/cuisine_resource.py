@@ -1,7 +1,8 @@
 from flask import jsonify
 from flask_restful import Resource, abort
-from data.cuisine import Recipe
+
 from data import db_session
+from data.cuisine import Recipe
 
 
 class CuisineResource(Resource):
@@ -40,4 +41,3 @@ def abort_if_recipe_not_found(id):
     recipe = session.query(Recipe).get(id)
     if not recipe:
         abort(404, message=f"Recipe with id = {id} not found")
-
