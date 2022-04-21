@@ -2,19 +2,69 @@
 
 {% block main %}
 
-<div class="container">
+
+<div class="container recipes-container">
     {% for i in recipes %}
-        <div class="row row-cols-auto">
+        <div class="row row-cols-auto dd">
             {% for recipe in i %}
-            <div class="col">
-
-                <div class="recipe-card">
-
-                    <img class="recipe-img" src="{{ url_for('static', 'img/recipe' + recipe.id + '.jpg'}}">
-
+                <div class="container-fluid recipe-card" onclick="location.href='/recipe/{{recipe['id']}}'">
+                    <div class="row row-cols-auto justify-content-center">
+                        <div class="col col-info">
+                            <div class="container info" >
+                                <div class="row">
+                                    <div class="col-1">
+                                        <form action="" class="favorite-form" method="post">
+                                            <button type="submit" class="favorite-btn" name="btn" value="{{recipe['id']}}">
+                                                {% if recipe['favorite'] == 0 %}
+                                                    <img class="favorite-btn-img" src="{{url_for('static', filename='icons/favorite_b.svg')}}">
+                                                {% else %}
+                                                    <img class="favorite-btn-img" src="{{url_for('static', filename='icons/favorite_f_b.svg')}}">
+                                                {% endif %}
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="col">
+                                        <h5>{{recipe['title']}}</h5>
+                                    </div>
+                                </div>
+                                <!--<div class="row">
+                                    <h3>{{recipe['title']}}</h3>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col col-img">
+                            <div class="container info">
+                                <div class="row">
+                                    <img class="recipe-img" src="{{ url_for('static', filename='img/recipe_' + recipe['id']|string + '.jpg')}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-info">
+                            <div class="container info" >
+                                <div class="row">
+                                    <p class="info-p">Әзерлек вакыты: {{recipe['cookTime']}} мин</p>
+                                </div>
+                                <div class="row">
+                                    <p class="info-p">Калории: {{recipe['calories']}} ккал</p>
+                                </div>
+                                <div class="row">
+                                    <p class="info-p">Жиры: {{recipe['fats']}} г</p>
+                                </div>
+                                <div class="row">
+                                    <p class="info-p">Белки: {{recipe['proteins']}} г</p>
+                                </div>
+                                <div class="row">
+                                    <p class="info-p">Углеводы: {{recipe['carboh']}} г</p>
+                                </div>
+                                <div class="row">
+                                    <p class="info-p">
+                                        Готовность к приготовлению: {{recipe['cookPosibility']}} %
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
             {% endfor %}
         </div>
     {% endfor %}

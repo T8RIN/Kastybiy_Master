@@ -1,0 +1,160 @@
+html {
+	height: auto;
+}
+
+body {
+    padding: 0px;
+	margin: 0px;
+    height: auto;
+}
+
+header {
+	position: relative;
+    margin: 0px;
+	background: #7dfd7a;
+	height: 130px;
+	width: 100%;
+}
+.navigation-item a img {
+	height: 32px;
+	background: none;
+	border-radius: 5px;
+}
+
+.navigation-item {
+	background: none;
+	border: none;
+}
+.navigation {
+	position: absolute;
+	bottom: 0px;
+}
+.col {
+	padding-left: 30px;
+}
+.icon {
+    width: 64px;
+    height: 64px;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.recipe-img {
+	object-fit: cover;
+	object-position: center;
+	border-radius: 30px;
+	height: 20%;
+}
+
+.recipe-img-container {
+    object-fit: cover;
+	object-position: center;
+	height: 20%;
+}
+
+.recipe-card {
+    flex: 0 0 calc(25% - 2*10px);
+	position: relative;
+    width: 33%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+.col-img {
+	padding: 1px;
+}
+
+.card-content {
+	flex:none;
+}
+
+.col-info {
+	padding: 1px;
+	margin: 0px;
+}
+
+.info {
+	padding: 0px;
+	margin: 0px;
+}
+h3 {
+   text-align: center;
+}
+
+.info-p {
+	margin: 2px;
+}
+
+.kastybiy-icon {
+    position: relative;
+    margin:15px;
+    width: 7%;
+}
+
+a: hover {
+    color: #007d00;
+}
+.fridge-container {
+    margin: 50px;
+}
+
+.recipe-bg-img {
+    object-fit: cover;
+	object-position: center;
+	border-radius: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.favorite-btn {
+    background: none;
+    decoration: none;
+    border: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+}
+
+.favorite-form {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.favorite-btn-img {
+	position: relative;
+	height: 100%;
+}
+.recipe-info-p-bg {
+    font-size: 25px;
+}
+
+.recipe-info-p {
+    font-size: 20px;
+}
+.recipe-dem {
+    background: none;
+}
+
+.recipe-info-row {
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.recipe-title-bg {
+    text-align: center;
+}
+.input-cuisine {
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+}
+.cuisine-form {
+    position: relative;
+    width: 50%;
+    margin-top: 10px;
+}
