@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form action="" method="post">
+<div class="container fridge-container">
+    {% for i in products %}
+        <div class="row row-4">
+            {% for j in i %}
+            <div class="col">
+                {% if j['inFridge'] == 1%}
+                <input class="check-box" type="checkbox" name="{{j['id']}}" id="{{j['id']}}" value="1" onclick="submit()" checked>
+                {% else %}
+                <input class="check-box" type="checkbox" name="{{j['id']}}" id="{{j['id']}}" value="1" onclick="submit()">
+                {% endif %}
+                <label for="{{j['id']}}">{{j['name']}}</label>
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+</form>
+{% endblock %}
