@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="container">
+    {% for i in recipes %}
+        <div class="row row-cols-auto">
+            {% for recipe in i %}
+            <div class="col">
+
+                <div class="recipe-card">
+
+                    <img class="recipe-img" src="{{ url_for('static', 'img/recipe' + recipe.id + '.jpg'}}">
+
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
